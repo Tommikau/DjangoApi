@@ -78,7 +78,6 @@ class KulutusViewSets(viewsets.ModelViewSet):
         return Kulutus.objects.filter(user=user)
    
     def perform_create(self, serializer):
-        # Lisää automaattisesti kirjautuneen käyttäjän tiedot tallennettavaan tietueeseen
         serializer.save(user=self.request.user)
 
     
@@ -89,7 +88,6 @@ class KulutusViewSets(viewsets.ModelViewSet):
         except User.DoesNotExist:
             return Response({'error': 'Invalid user token'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Vaihda 'user' -kenttä 'user_id' -kenttään
         request.data['user'] = user_id
 
         serializer = self.get_serializer(data=request.data)
@@ -112,7 +110,7 @@ class KulutusViewSets(viewsets.ModelViewSet):
         except User.DoesNotExist:
             return Response({'error': 'Invalid user token'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Vaihda 'user' -kenttä 'user_id' -kenttään
+
         request.data['user'] = user_id
 
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
