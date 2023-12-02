@@ -107,8 +107,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'kuludjango-database',  
-        'USER': 'tommiAdmin',          
-        'PASSWORD': 'Lohikaarme2022', 
+        'USER': 'xennmepzgi',          
+        'PASSWORD': 'E3378W41J3VJA651$', 
         'HOST': 'kuludjango-server.postgres.database.azure.com',
         'PORT': '5432',
     }
