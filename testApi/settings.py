@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-bmalt^&q8(_@*towux_*x6x27+8uqzu2_uigay+yc*0l+s8#qk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['http://kulutapi.azurewebsites.net']
+ALLOWED_HOSTS = ['http://kulutdjango.azurewebsites.net']
 
 
 # Application definition
@@ -106,10 +106,10 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kulutdb',  
+        'NAME': 'kuludjango-database',  
         'USER': 'tommiAdmin',          
         'PASSWORD': 'Lohikaarme2022', 
-        'HOST': 'tommipgsrv.postgres.database.azure.com',
+        'HOST': 'kuludjango-server.postgres.database.azure.com',
         'PORT': '5432',
     }
 }
