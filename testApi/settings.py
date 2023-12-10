@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+from .config import DATABASES
+
+
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -45,8 +49,7 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  # Lisää React-sovelluksen osoite tähän
-    # Voit lisätä muita sallittuja alkuperiä tarvittaessa
+    'http://localhost:3000',  
     'https://dancing-frangipane-ddfc20.netlify.app',
 ]
 REST_FRAMEWORK = {
@@ -93,41 +96,13 @@ WSGI_APPLICATION = 'testApi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',c
     }
 }
-'''
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kuludjango-database',  
-        'USER': 'xennmepzgi',          
-        'PASSWORD': 'E3378W41J3VJA651$', 
-        'HOST': 'kuludjango-server.postgres.database.azure.com',
-        'PORT': '5432',
-    }
-}
-
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'CLIENT': {
-            'name': 'KulutusDb',
-            'host': 'mongodb+srv://testaaja:3kuu1tKzqeGeFLsC@cluster1.jkc8fxi.mongodb.net/KulutusDb?retryWrites=true&w=majority',
-            'username': 'testaaja',
-            'password': '3kuu1tKzqeGeFLsC',
-            'authMechanism': 'SCRAM-SHA-1',
-        },
-    }
-}
-'''
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
